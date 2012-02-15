@@ -4,8 +4,8 @@ require File.expand_path('../lib/txt2img/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Hooopo"]
   gem.email         = ["hoooopo@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{ generate image from txt}
+  gem.summary       = %q{generate image from txt}
   gem.homepage      = ""
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
@@ -14,4 +14,5 @@ Gem::Specification.new do |gem|
   gem.name          = "txt2img"
   gem.require_paths = ["lib"]
   gem.version       = Txt2img::VERSION
+  gem.add_runtime_dependency "quick_magick", ["~> 0.8"]
 end
