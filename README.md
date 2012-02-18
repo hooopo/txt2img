@@ -18,8 +18,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
-
+```ruby
+require 'txt2img'
+txt = Txt2img::Txt.new("你好世界" * 100)
+txt.write("hello.gif")
+```
 ## Contributing
 
 1. Fork it
