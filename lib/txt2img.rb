@@ -8,16 +8,16 @@ module Txt2img
 
     def initialize(txt, font = nil, width = 20, pointsize = 30)
       @txt = txt
-      @font ||= File.expand_path("../../fonts/microhei.ttc", __FILE__)
-      @width ||= 20
-      @pointsize ||= 30
+      @font = font || File.expand_path("../../fonts/microhei.ttc", __FILE__)
+      @width = width || 20
+      @pointsize = pointsize || 30
     end
 
     def write(path)
       wrap!
       image = QuickMagick::Image::solid(width * pointsize + 100, ((height * pointsize) * 1.3).to_i, :white)
       image.font = font
-      image.pointsize = 40
+      image.pointsize = pointsize 
       image.draw_text(0, 0, txt, :gravity => "center")
       image.save(path)
     end

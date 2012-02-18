@@ -23,6 +23,9 @@ require 'txt2img'
 txt = Txt2img::Txt.new("你好世界" * 100)
 txt.write("hello.gif")
 ```
+
+![hello.gif](http://dl.iteye.com/upload/attachment/0063/4250/34a1f8b8-2532-3c42-a0ed-fe49db580bca.gif)
+
 ## Contributing
 
 1. Fork it
