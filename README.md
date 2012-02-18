@@ -1,6 +1,6 @@
 # Txt2img
 
-TODO: Write a gem description
+Generate image from text
 
 ## Installation
 
