@@ -24,7 +24,7 @@ module Txt2img
 
     # TODO optimize
     def wrap!
-      @txt = @txt.split(/[\r\n]+/).map{|x| x.scan(/.{1,#{width}}/).join("\n")}.join("\n")
+      @txt = @txt.split(/[\r\n]+/).map{|x| x.scan(/.{1,#{width}}/u).join("\n")}.join("\n")
     end
 
     def height
