@@ -12,7 +12,7 @@ Gem::Specification.new do |gem|
   gem.files         = `git ls-files`.split("\n")
   gem.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   gem.name          = "txt2img"
-  gem.require_paths = ["lib"]
+  gem.require_paths = ["lib", "fonts"]
   gem.version       = Txt2img::VERSION
   gem.add_runtime_dependency "quick_magick_hooopo", ["~> 0.8"]
 end
