@@ -6,11 +6,11 @@ module Txt2img
 
     attr_accessor :txt, :font, :width, :pointsize
 
-    def initialize(txt, font = nil, width = 20, pointsize = 40)
+    def initialize(txt, font = nil, width = 20, pointsize = 30)
       @txt = txt
       @font ||= File.expand_path("../../fonts/microhei.ttc", __FILE__)
       @width ||= 20
-      @pointsize ||= 40
+      @pointsize ||= 30
     end
 
     def write(path)
