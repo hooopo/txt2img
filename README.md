@@ -4,6 +4,10 @@ Generate image from text
 
 ## Installation
 
+Install Imagemagick 
+
+    sudo apt-get install imagemagick
+
 Add this line to your application's Gemfile:
 
     gem 'txt2img'

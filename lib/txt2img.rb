@@ -23,6 +23,8 @@ module Txt2img
     end
 
     # TODO optimize
+    # TODO wrap by screen width, NOT by char size
+    # TODO NOT break English word
     def wrap!
       @txt = @txt.split(/[\r\n]+/).map{|x| x.scan(/.{1,#{width}}/u).join("\n")}.join("\n")
     end
