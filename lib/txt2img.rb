@@ -1,16 +1,20 @@
+# encoding: utf-8
+
 require "txt2img/version"
+require "txt2img/string_util"
 require 'quick_magick'
 
 module Txt2img
   class Txt
+    include StringUtil
 
     attr_accessor :txt, :font, :width, :pointsize
 
-    def initialize(txt, font = nil, width = 20, pointsize = 30)
+    def initialize(txt, options = {})
       @txt = txt
-      @font = font || File.expand_path("../../fonts/microhei.ttc", __FILE__)
-      @width = width || 20
-      @pointsize = pointsize || 30
+      @font = options[:font] || File.expand_path("../../fonts/microhei.ttc", __FILE__)
+      @width = options[:width] || 20
+      @pointsize = options[:pointsize] || 30
     end
 
     def write(path)
@@ -23,10 +27,12 @@ module Txt2img
     end
 
     # TODO optimize
-    # TODO wrap by screen width, NOT by char size
     # TODO NOT break English word
+    # TODO tune the margin and text size
     def wrap!
-      @txt = @txt.split(/[\r\n]+/).map{|x| x.scan(/.{1,#{width}}/u).join("\n")}.join("\n")
+      @txt = @txt.split(/[\r\n]+/).map do |line|
+        wrap_by_width(line, width)
+      end * "\n"
     end
 
     def height
