@@ -19,6 +19,7 @@ module Txt2img
       @wrap = options[:wrap] || false
     end
 
+    # TODO escape txt
     def write(path)
       if wrap
       wrap!
