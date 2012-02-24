@@ -14,6 +14,5 @@ Gem::Specification.new do |gem|
   gem.name          = "txt2img"
   gem.require_paths = ["lib", "fonts"]
   gem.version       = Txt2img::VERSION
-  gem.add_runtime_dependency "quick_magick_hooopo", ["~> 0.8"]
   gem.add_runtime_dependency "unicode-display_width", ["~> 0.1.1"]
 end
